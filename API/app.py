@@ -11,7 +11,6 @@ from api_documentos.src.model import mapper as mapper_doc
 from api_documentos.src.model.form.documento_form import DocumentoForm
 from api_documentos.src.service.service_factory import get_documento_service
 
-
 app = Flask(__name__)
 
 @app.route("/api/alunos", methods=["POST"])
@@ -31,7 +30,7 @@ def recuperar_aluno():
     dados_aluno = request.json
 
     service = get_aluno_service()
-    aluno = service.recuperar_aluno(dados_aluno["registro"])
+    aluno = service.recuperar_aluno(dados_aluno["user"])
     check_password(dados_aluno["senha"], aluno.senha)
     aluno_dto = mapper_aluno.aluno_to_dto(aluno)
 
@@ -60,17 +59,18 @@ def recuperar_documentos():
 def publicar_documento():
     
     token = request.headers.get("Authorization").split()[1]
-    check_token(token)
+    registro_criador = check_token(token)["registro"]
 
     service = get_documento_service()
 
     documento_form = request.json
+    documento_form["registro_criador"] = registro_criador
     documento = mapper_doc.form_to_documento(DocumentoForm(**documento_form))
 
     service.persistir_documento(documento)
 
     return "", 204
 
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=getenv('PORT'))
+    app.run(host='0.0.0.0', debug=True, port=getenv('PORT'))
+    

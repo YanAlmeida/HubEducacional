@@ -1,23 +1,25 @@
-database:
-    image: mysql:5.7
-    ports:
-        - "3306:3306"
-    command: --init-file /data/application/init.sql
-    volumes:
-        - ./DB/init.sql:/data/application/init.sql
-    environment:
-        MYSQL_ROOT_PASSWORD: 'secret'
-api:
-    build: ./API
-    ports:
-        - "5000:5000"
-    volumes:
-        - ./API:/usr/src/app/
-    environment:
-        FLASK_DEBUG: 1
-        SIGNATURE: "TTdD!SJdh7ZgPn=p#dZWYVChukDETre3W8xymX74=FwnY^+2N4a*UhH@VE_=3vup?^yY-^P6fpfS6aTU5*WYSyk7U*UdJ%kDXr9?b!T@vZ&QfjbENt6&EDVSswTa%L&@FTms^Wz%rGt43T8F#%@b4_s6AB=GM7dh_CAjXAXG6FV7=rQy_dh6V3n!zpy+^G%zfYZB_w8^FEtNLbW#XWJqFvqnVVm=JY9aPcFrKcw=%MnyZLADq3HML-YMuGcq*vq!"
-        USER_DB: "api"
-        PASSWORD_DB: "apipassword"
-        DATABASE_NAME: "hubeducacional"
-        HOST_DB: ""
-        PORT: 5000
+version: '3'
+services:
+    database:
+        image: mysql:5.7
+        ports:
+            - "3306:3306"
+        command: --init-file /data/application/init.sql
+        volumes:
+            - ./DB/init.sql:/data/application/init.sql
+        environment:
+            MYSQL_ROOT_PASSWORD: 'secret'
+    api:
+        build: ./API
+        ports:
+            - "5000:5000"
+        volumes:
+            - ./API:/usr/src/app/
+        environment:
+            FLASK_DEBUG: 1
+            SIGNATURE: "TTdD!SJdh7ZgPn=p#dZWYVChukDETre3W8xymX74=FwnY^+2N4a*UhH@VE_=3vup?^yY-^P6fpfS6aTU5*WYSyk7U*UdJ%kDXr9?b!T@vZ&QfjbENt6&EDVSswTa%L&@FTms^Wz%rGt43T8F#%@b4_s6AB=GM7dh_CAjXAXG6FV7=rQy_dh6V3n!zpy+^G%zfYZB_w8^FEtNLbW#XWJqFvqnVVm=JY9aPcFrKcw=%MnyZLADq3HML-YMuGcq*vq!"
+            USER_DB: "api"
+            PASSWORD_DB: "apipassword"
+            DATABASE_NAME: "hubeducacional"
+            HOST_DB: database
+            PORT: 5000

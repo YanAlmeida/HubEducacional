@@ -10,5 +10,5 @@ class AlunoService:
         return self.__aluno_dao.persistir(aluno)
     
     @transactional
-    def recuperar_aluno(self, registro):
-        return self.__aluno_dao.recuperar_por_registro(registro)
+    def recuperar_aluno(self, user):
+        return self.__aluno_dao.recuperar_por_user(user)

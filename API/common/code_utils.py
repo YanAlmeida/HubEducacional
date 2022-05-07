@@ -2,6 +2,7 @@ from functools import wraps
 from datetime import date, datetime
 from common.exceptions import ItemNaoEncontradoException, Handable
 import json
+import traceback as tb
 
 
 def check_404(item, message="Nenhum item encontrado"):
@@ -17,6 +18,7 @@ def exception_handler(func):
         except Exception as e:
             if isinstance(e, Handable):
                 return e.handle()
+            print(tb.format_exc())
             return "Erro desconhecido.", 500
 
     return _exception_handler

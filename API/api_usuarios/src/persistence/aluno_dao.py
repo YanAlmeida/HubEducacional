@@ -6,7 +6,7 @@ from api_usuarios.src.model.entities.aluno import Aluno
 class AlunoDao:
 
     _table_name = "aluno"
-    _field_primary_key = "registro"
+    _field_user = "user"
     _fields = [
         "registro",
         "user",
@@ -14,10 +14,10 @@ class AlunoDao:
         "nome"
     ]
 
-    def recuperar_por_registro(self, registro):
+    def recuperar_por_user(self, user):
         with DBConnectionSingleton().get_cursor() as cursor:
-            query = f"SELECT {','.join(self._fields)} FROM {self._table_name} WHERE {self._field_primary_key} = %s;"
-            cursor.execute(query, (registro,))
+            query = f"SELECT {','.join(self._fields)} FROM {self._table_name} WHERE {self._field_user} = %s;"
+            cursor.execute(query, (user,))
             result = cursor.fetchone()
             check_404(result)
         return Aluno(*result)
