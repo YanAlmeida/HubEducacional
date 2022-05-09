@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 body {
-  background-color: #E8ECEF;
+  background-color: #e8ecef;
   font-family: "Poppins";
 }
 
@@ -21,7 +21,7 @@ i {
 }
 
 nav {
-  background: rgb(212, 212, 212);
+  background-color: rgb(212, 212, 212);
   display: flex;
   align-items: baseline;
 }
@@ -44,4 +44,34 @@ nav a {
   display: flex;
   justify-content: center;
   height: 5rem;
+}
+
+.get-documents button {
+  padding: 22px;
+  background-color: rgb(212, 212, 212);
+  border: none;
+  border-radius: 12px;
+}
+
+.docs-deck {
+  margin: 0 2rem;
+  margin-top: 3rem;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: rgb(212, 212, 212);
+  border-radius: 8px;
+}
+
+.doc-card{
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #e8ecef;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.doc-card h2{
+  color: rgb(8, 127, 26);
 }

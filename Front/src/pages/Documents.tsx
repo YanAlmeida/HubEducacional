@@ -1,14 +1,11 @@
+import ListDocuments from "../components/ListDocuments";
 import Nav from "../components/Nav";
 
-
-
-export default function() {
+export default function Documents() {
     return(
         <>
             <Nav/>
-            <div className="get-documents">
-                <button> GET DOCUMENTS </button>
-            </div>
+            <ListDocuments/>
         </>
     )
 }

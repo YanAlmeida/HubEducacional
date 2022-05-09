@@ -10,7 +10,7 @@ export default function Login() {
                     <div className="col-sm-8">
                         <div className="card">
                             <div className="card-body">
-                                <UserForm action="/login"/>
+                                <UserForm action="Login"/>
                             </div>
                         </div>
                     </div>
