@@ -46,9 +46,9 @@ nav a {
   height: 5rem;
 }
 
-.get-documents button {
+.get-documents a {
   padding: 22px;
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(124, 124, 124);
   border: none;
   border-radius: 12px;
 }
@@ -74,4 +74,34 @@ nav a {
 
 .doc-card h2{
   color: rgb(8, 127, 26);
+}
+
+.post-document {
+  margin: auto 8rem;
+  margin-top: 8rem;
+  padding: 1rem 0 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(212, 212, 212);
+  border-radius: 12px;
+}
+
+.post-document form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-document label {
+  margin-top: 0.5rem;
+}
+
+.post-document button {
+  margin-top: 1.3rem;
+  background: rgb(165, 245, 180);
+  width: 50%;
+  border: 2px solid rgb(78, 78, 78);
+  border-radius: 6px;
 }

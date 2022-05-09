@@ -28,9 +28,6 @@ export default function ListDocuments() {
     return(
         <div className="list-documents">
             <>
-                <div className="get-documents">
-                    <button > Adicionar documento </button>
-                </div>
                 <div className="docs-deck">
                     {documents.map(document => {
                         return <DocCard doc={document}/>
