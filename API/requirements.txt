@@ -1,2 +1,4 @@
 mysql-connector-python==8.0.29
 pyjwt==1.7.1
+pytest==7.1.2
+mock==4.0.3

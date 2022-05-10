@@ -13,10 +13,7 @@ def generate_password(senha):
 
 
 def check_password(senha, senha_criptografada):
-    digestor = sha256()
-    digestor.update(senha.encode("utf-8"))
-    senha_enviada =  digestor.hexdigest()
-    if senha_enviada != senha_criptografada:
+    if generate_password(senha) != senha_criptografada:
         raise AcessoNegadoException("Senha incorreta.")
 
 
