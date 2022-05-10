@@ -1,5 +1,6 @@
 from os import getenv
 from flask import Flask, request
+from flask_cors import CORS
 import json
 import jwt
 from common.auth_utils import check_password, check_token, generate_token
@@ -12,6 +13,8 @@ from api_documentos.src.model.form.documento_form import DocumentoForm
 from api_documentos.src.service.service_factory import get_documento_service
 
 app = Flask(__name__)
+
+CORS(app)
 
 @app.route("/api/alunos", methods=["POST"])
 @exception_handler
