@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+body {
+  background-color: #e8ecef;
+  font-family: "Poppins";
+}
+
+a, a:hover, a:focus, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.centered {
+    padding-top: 200px;
+    text-align: center;
+}
+
+i {
+  color: rgb(0, 63, 0);
+}
+
+nav {
+  background-color: rgb(212, 212, 212);
+  display: flex;
+  align-items: baseline;
+}
+
+nav :first-child {
+  font-family: "Satisfy";
+  font-size: 2rem;
+  color: rgb(6, 80, 17);
+  margin-left: 1.2rem;
+}
+
+nav a {
+  margin: 8px 2rem;
+  padding: 4px 6px;
+}
+
+.get-documents{
+  /* background-color: red; */
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  height: 5rem;
+}
+
+.get-documents a {
+  padding: 22px;
+  background-color: rgb(124, 124, 124);
+  border: none;
+  border-radius: 12px;
+}
+
+.docs-deck {
+  margin: 0 2rem;
+  margin-top: 3rem;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: rgb(212, 212, 212);
+  border-radius: 8px;
+}
+
+.doc-card{
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #e8ecef;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.doc-card h2{
+  color: rgb(8, 127, 26);
+}
+
+.post-document {
+  margin: auto 8rem;
+  margin-top: 8rem;
+  padding: 1rem 0 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(212, 212, 212);
+  border-radius: 12px;
+}
+
+.post-document form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-document label {
+  margin-top: 0.5rem;
+}
+
+.post-document button {
+  margin-top: 1.3rem;
+  background: rgb(165, 245, 180);
+  width: 50%;
+  border: 2px solid rgb(78, 78, 78);
+  border-radius: 6px;
+}
